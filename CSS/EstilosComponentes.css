@@ -665,6 +665,7 @@
 /* Restablece el estilo de tus range inputs en la web */
 .seccion-sliders-1 .form-range {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     background: transparent;
     margin: 0;
