@@ -37,9 +37,9 @@ Oaxaca de Juarez, Oaxaca.
 
 ## Librería de Componentes Visuales - Actividad 3
 
-### Video
+### Video (Demo Promocional)
 
-<>
+<video src="https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=sharing" controls width="100%"></video>
 
 En este proyecto construyes una librería modular utilizando JavaScript vainilla y CSS moderno. 
 Tus componentes visuales son piezas de interfaz reutilizables que el usuario puede ver e interactuar (modales, tooltips, dropdowns, toasts). 
@@ -69,6 +69,23 @@ Para utilizar esta librería en tu propio proyecto, sigue estos sencillos pasos:
 
 ---
 
+### Botones Interactivos (GlowBox y NeonBox)
+
+Botones interactivos diseñados completamente en CSS que responden a eventos del usuario (`hover`, `active`). Se incluyen en la hoja de estilos `EstilosComponentes.css`.
+
+**GlowBox (Botón 1):**
+Tiene una animación constante y un destello colorido.
+* Normal: ![Glow Normal](./IMG/glowbox-normal.png)
+* Al pasar el cursor (Hover): ![Glow Hover](./IMG/glowbox-hover.png)
+* Al hacer clic: ![Glow Click](./IMG/glowbox-onclick.png)
+
+**NeonBox (Botón 2):**
+Botón oscuro que reacciona con un halo neón rosa al pasar el cursor.
+* Normal: ![Neon Normal](./IMG/neonbox-normal.png)
+* Al pasar el cursor (Hover): ![Neon Hover](./IMG/neonboc-hover.png)
+
+---
+
 ### Componente 1: CustomModal
 
 Crea una ventana emergente interactiva sobre tu contenido. Permite mostrar avisos o insertar formularios HTML de forma limpia.
@@ -78,6 +95,9 @@ Crea una ventana emergente interactiva sobre tu contenido. Permite mostrar aviso
 @param {string} opciones.contenido - El texto o estructura HTML interna de tu modal.
 @param {string} opciones.colorTema - Color hexadecimal para la barra superior (ej. `#023E7D`).
 @param {string} opciones.claseExtra - Clases CSS adicionales para personalizar tus temas (ej. `modal-glow`, `modal-neon`).
+
+**Captura de pantalla:**
+![Demo de CustomModal](./Ruta/A/Tu/CapturaModal.png)
 
 ```js
 // Instancia un nuevo Modal al hacer clic en tu botón
@@ -102,6 +122,9 @@ Envía notificaciones dinámicas (alertas de éxito, advertencia o error) que se
 @param {string} opciones.mensaje - El texto descriptivo de tu alerta.
 @param {string} opciones.tipo - El estilo visual de tu notificación (`success`, `error`, `warning`, `info`).
 @param {number} opciones.duracion - Milisegundos que dura tu alerta antes de desaparecer (por defecto: `3000`).
+
+**Captura de pantalla:**
+![Demo de CustomToast](./Ruta/A/Tu/CapturaToast.png)
 
 ```js
 // Crea una alerta de éxito cuando realizas una acción exitosa en tu sistema
@@ -128,6 +151,9 @@ Crea un menú desplegable asociado a tu botón disparador. Maneja automáticamen
 @param {string} opciones.claseExtra - Clase para aplicar los temas de fondo y bordes (`dropdown-verde`, `dropdown-neon`).
 @param {Array} opciones.items - Lista de objetos `{texto, accion}` para configurar los clics de cada opción.
 
+**Captura de pantalla:**
+![Demo de CustomDropdown](./Ruta/A/Tu/CapturaDropdown.png)
+
 ```js
 // Inicializa tu menú pasándole el ID de tu botón contenedor
 new CustomDropdown({
@@ -153,6 +179,9 @@ Detecta cualquier elemento de tu HTML que posea el atributo `data-tooltip` y cre
 Atributos HTML requeridos:
 - `data-tooltip="Mensaje..."`: Define el texto de tu etiqueta flotante.
 - `data-tooltip-theme="tooltip-neon"`: (Opcional) Define el tema/color de tu recuadro.
+
+**Captura de pantalla:**
+![Demo de CustomTooltip](./Ruta/A/Tu/CapturaTooltip.png)
 
 ```html
 <!-- En tu HTML simplemente agregas los atributos data a tu botón o enlace: -->

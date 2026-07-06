@@ -8,6 +8,8 @@ class CustomToast {
         this.tipo = opciones.tipo || "info"; // info, success, warning, error
         this.duracion = opciones.duracion || 4000; // en milisegundos
 
+        console.log(`[CustomToast] Inicializando notificación tipo '${this.tipo}' con mensaje: '${this.mensaje}'`);
+
         // Ejecuta la creación del toast
         this.crear();
     }
@@ -88,6 +90,8 @@ class CustomModal {
         this.colorTema = opciones.colorTema || "#023E7D"; // Color de la cabecera
         this.claseExtra = opciones.claseExtra || ""; // Clase CSS adicional para personalizar tu modal
         this.alCerrar = opciones.alCerrar || null; // Callback opcional al cerrar
+
+        console.log(`[CustomModal] Inicializando modal con título: '${this.titulo}' y tema: '${this.colorTema}'`);
 
         // Genera la interfaz de tu modal
         this.inicializar();
@@ -173,6 +177,8 @@ class CustomDropdown {
         this.items = opciones.items || [];
         this.claseExtra = opciones.claseExtra || ""; // Clase CSS adicional para personalizar tu menú
 
+        console.log(`[CustomDropdown] Inicializando menú desplegable en el botón ID: '${this.botonId}' con ${this.items.length} opciones.`);
+
         // Ejecuta la inicialización de tu dropdown
         this.inicializar();
     }
@@ -224,6 +230,8 @@ class CustomTooltip {
     constructor(opciones = {}) {
         // Selecciona tus elementos por medio de un atributo data
         this.selector = opciones.selector || '[data-tooltip]';
+
+        console.log(`[CustomTooltip] Inicializando escuchas globales para atributos '${this.selector}'.`);
 
         // Comienza a escuchar tus eventos de hover
         this.inicializar();
