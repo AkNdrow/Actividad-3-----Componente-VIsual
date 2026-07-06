@@ -37,9 +37,9 @@ Oaxaca de Juarez, Oaxaca.
 
 ## Librería de Componentes Visuales - Actividad 3
 
-### Video (Demo Promocional)
+### Video
 
-<video src="https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=sharing" controls width="100%"></video>
+<https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=sharing>
 
 En este proyecto construyes una librería modular utilizando JavaScript vainilla y CSS moderno. 
 Tus componentes visuales son piezas de interfaz reutilizables que el usuario puede ver e interactuar (modales, tooltips, dropdowns, toasts). 
