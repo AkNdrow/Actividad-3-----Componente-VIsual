@@ -39,15 +39,16 @@ Oaxaca de Juarez, Oaxaca.
 
 ### Video
 
-<https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=sharing>
+[Video Demostrativo de la Librería de Componentes Visuales](https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=drive_link)
 
-En este proyecto construyes una librería modular utilizando JavaScript vainilla y CSS moderno. 
-Tus componentes visuales son piezas de interfaz reutilizables que el usuario puede ver e interactuar (modales, tooltips, dropdowns, toasts). 
+En este proyecto construyes una librería modular utilizando JavaScript vainilla y CSS moderno.
+Tus componentes visuales son piezas de interfaz reutilizables que el usuario puede ver e interactuar (modales, tooltips, dropdowns, toasts).
 Al separarlos en tu propia librería, puedes inyectarlos en cualquier página HTML con diferente contenido sin tener que reescribir tu lógica ni tus estilos cada vez.
 
 ### Problemas que resuelve
 
 Esta librería soluciona los problemas más comunes al construir interfaces de usuario complejas:
+
 - **Redundancia de código:** Evita que tengas que repetir tus estructuras HTML y estilos para elementos comunes en múltiples páginas.
 - **Consistencia Visual:** Asegura que todos tus menús, notificaciones y modales compartan las mismas animaciones y tu paleta de colores oscuros con sombreados temáticos (Neón, Glow).
 - **Interactividad Accesible:** Facilita la creación de alertas contextuales, información flotante y modales dinámicos en tu web sin depender de frameworks pesados.
@@ -58,13 +59,17 @@ Esta librería soluciona los problemas más comunes al construir interfaces de u
 Para utilizar esta librería en tu propio proyecto, sigue estos sencillos pasos:
 
 1. **Vincula los Estilos:** Agrega la hoja de estilos de tus componentes en el `<head>` de tu archivo HTML.
+
    ```html
    <link rel="stylesheet" href="./CSS/EstilosComponentes.css">
    ```
+
 2. **Vincula la utilería JS:** Coloca la referencia a tu archivo `LibreriaComponentes.js` al final de tu documento HTML (antes de cerrar el `<body>`):
+
    ```html
    <script src="./JS/LibreriaComponentes.js"></script>
    ```
+
 3. **Ejecuta la inicialización:** Instancia tus clases en tu script de cierre para dar vida a los componentes.
 
 ---
@@ -75,14 +80,14 @@ Botones interactivos diseñados completamente en CSS que responden a eventos del
 
 **GlowBox (Botón 1):**
 Tiene una animación constante y un destello colorido.
-* Normal: ![Glow Normal](./IMG/glowbox-normal.png)
-* Al pasar el cursor (Hover): ![Glow Hover](./IMG/glowbox-hover.png)
-* Al hacer clic: ![Glow Click](./IMG/glowbox-onclick.png)
+- Normal: ![Glow Normal](./IMG/glowbox-normal.png)
+- Al pasar el cursor (Hover): ![Glow Hover](./IMG/glowbox-hover.png)
+- Al hacer clic: ![Glow Click](./IMG/glowbox-onclick.png)
 
 **NeonBox (Botón 2):**
 Botón oscuro que reacciona con un halo neón rosa al pasar el cursor.
-* Normal: ![Neon Normal](./IMG/neonbox-normal.png)
-* Al pasar el cursor (Hover): ![Neon Hover](./IMG/neonboc-hover.png)
+- Normal: ![Neon Normal](./IMG/neonbox-normal.png)
+- Al pasar el cursor (Hover): ![Neon Hover](./IMG/neonboc-hover.png)
 
 ---
 
@@ -177,6 +182,7 @@ Detecta cualquier elemento de tu HTML que posea el atributo `data-tooltip` y cre
 
 @param {Object} opciones - (Opcional) Selector base de los elementos.
 Atributos HTML requeridos:
+
 - `data-tooltip="Mensaje..."`: Define el texto de tu etiqueta flotante.
 - `data-tooltip-theme="tooltip-neon"`: (Opcional) Define el tema/color de tu recuadro.
 
