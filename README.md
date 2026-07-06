@@ -39,7 +39,7 @@ Oaxaca de Juarez, Oaxaca.
 
 ### Video
 
-[Video Demostrativo de la Librería de Componentes Visuales](https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=drive_link)
+<https://drive.google.com/file/d/1QmH_AOZJMd6zTd9FhzgaZYkmFW5ELUDp/view?usp=drive_link>
 
 En este proyecto construyes una librería modular utilizando JavaScript vainilla y CSS moderno.
 Tus componentes visuales son piezas de interfaz reutilizables que el usuario puede ver e interactuar (modales, tooltips, dropdowns, toasts).
@@ -80,12 +80,14 @@ Botones interactivos diseñados completamente en CSS que responden a eventos del
 
 **GlowBox (Botón 1):**
 Tiene una animación constante y un destello colorido.
+
 - Normal: ![Glow Normal](./IMG/glowbox-normal.png)
 - Al pasar el cursor (Hover): ![Glow Hover](./IMG/glowbox-hover.png)
 - Al hacer clic: ![Glow Click](./IMG/glowbox-onclick.png)
 
 **NeonBox (Botón 2):**
 Botón oscuro que reacciona con un halo neón rosa al pasar el cursor.
+
 - Normal: ![Neon Normal](./IMG/neonbox-normal.png)
 - Al pasar el cursor (Hover): ![Neon Hover](./IMG/neonboc-hover.png)
 
