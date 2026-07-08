@@ -79,7 +79,7 @@
 
 /* Boton neon */
 
-#neon-btn {
+.neon-btn {
     position: relative;
     border: none;
     height: 50px;
@@ -93,7 +93,7 @@
     border-radius: 8px;
 }
 
-#neon-btn:hover {
+.neon-btn:hover {
     background-color: #ff6666;
     box-shadow: 0 0 5px #ff6666,
         0 0 25px #ff6666,
@@ -109,7 +109,7 @@
 /* --- TUS ESTILOS PARA NOTIFICACIONES TOAST --- */
 
 /* Posiciona tu contenedor global en la esquina superior derecha */
-#contenedor-toasts-custom {
+.contenedor-toasts-custom {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -565,7 +565,7 @@
 /* --- TUS ESTILOS PARA CASILLAS DE VERIFICACIÓN (CHECKBOXES) --- */
 
 /* Estilo de tu primera casilla (Glow verde) */
-#checkbox-1 {
+.checkbox-1 {
     appearance: none;
     -webkit-appearance: none;
     width: 22px;
@@ -578,12 +578,12 @@
     transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-#checkbox-1:checked {
+.checkbox-1:checked {
     background-color: #2ecc71;
     box-shadow: 0 0 10px #2ecc71;
 }
 
-#checkbox-1:checked::after {
+.checkbox-1:checked::after {
     content: "✓";
     color: white;
     position: absolute;
@@ -595,7 +595,7 @@
 }
 
 /* Estilo de tu segunda casilla (Neón rosa) */
-#checkbox-2 {
+.checkbox-2 {
     appearance: none;
     -webkit-appearance: none;
     width: 22px;
@@ -608,12 +608,12 @@
     transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-#checkbox-2:checked {
+.checkbox-2:checked {
     background-color: #ff6666;
     box-shadow: 0 0 10px #ff6666;
 }
 
-#checkbox-2:checked::after {
+.checkbox-2:checked::after {
     content: "✓";
     color: white;
     position: absolute;
@@ -625,7 +625,7 @@
 }
 
 /* Estilo de tu tercera casilla (Switch / Toggler deslizable) */
-#checkbox-3 {
+.checkbox-3 {
     appearance: none;
     -webkit-appearance: none;
     width: 46px;
@@ -638,7 +638,7 @@
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-#checkbox-3::after {
+.checkbox-3::after {
     content: "";
     position: absolute;
     top: 2px;
@@ -650,12 +650,12 @@
     transition: transform 0.3s, background-color 0.3s;
 }
 
-#checkbox-3:checked {
+.checkbox-3:checked {
     background-color: #62B6CB;
     box-shadow: 0 0 10px rgba(98, 182, 203, 0.5);
 }
 
-#checkbox-3:checked::after {
+.checkbox-3:checked::after {
     transform: translateX(24px);
     background-color: #ffffff;
 }
@@ -676,13 +676,13 @@
 }
 
 /* Estilo de tu primer control deslizable (Gradiente con brillo verde) */
-#slider-1::-webkit-slider-runnable-track {
+.slider-1::-webkit-slider-runnable-track {
     background: linear-gradient(90deg, #2ecc71, #62B6CB);
     height: 8px;
     border-radius: 4px;
 }
 
-#slider-1::-webkit-slider-thumb {
+.slider-1::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #ffffff;
     border: 2px solid #2ecc71;
@@ -695,14 +695,14 @@
 }
 
 /* Estilo de tu segundo control deslizable (Neón rosa) */
-#slider-2::-webkit-slider-runnable-track {
+.slider-2::-webkit-slider-runnable-track {
     background: #222020;
     border: 1px solid #ff6666;
     height: 8px;
     border-radius: 4px;
 }
 
-#slider-2::-webkit-slider-thumb {
+.slider-2::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #ff6666;
     width: 20px;
@@ -714,13 +714,13 @@
 }
 
 /* Estilo de tu tercer control deslizable (Glassmorphism de tu paleta) */
-#slider-3::-webkit-slider-runnable-track {
+.slider-3::-webkit-slider-runnable-track {
     background: rgba(255, 255, 255, 0.1);
     height: 10px;
     border-radius: 5px;
 }
 
-#slider-3::-webkit-slider-thumb {
+.slider-3::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #62B6CB;
     width: 24px;

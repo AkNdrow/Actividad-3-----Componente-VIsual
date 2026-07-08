@@ -45,6 +45,7 @@ class CustomToast {
         if (!contenedor) {
             contenedor = document.createElement('div');
             contenedor.id = 'contenedor-toasts-custom';
+            contenedor.classList.add('contenedor-toasts-custom');
             document.body.appendChild(contenedor);
         }
 
