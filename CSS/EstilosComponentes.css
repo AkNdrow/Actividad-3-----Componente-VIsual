@@ -1,5 +1,5 @@
 /* Boton glow*/
-#glow-btn {
+.glow-btn {
     padding: 15px 40px;
     border: none;
     outline: none;
@@ -11,7 +11,7 @@
 
 }
 
-#glow-btn::after {
+.glow-btn::after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 }
 
-#glow-btn:before {
+.glow-btn:before {
     content: "";
     background: linear-gradient(45deg,
             #ff0000,
@@ -64,15 +64,15 @@
 }
 
 /* hover */
-#glow-btn:hover::before {
+.glow-btn:hover::before {
     opacity: 1;
 }
 
-#glow-btn:active:after {
+.glow-btn:active:after {
     background: transparent;
 }
 
-#glow-btn:active {
+.glow-btn:active {
     color: #000;
     font-weight: bold;
 }

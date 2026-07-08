@@ -1,6 +1,29 @@
 /**
  * Crea una notificación emergente tipo Toast en tu pantalla.
  */
+
+// =====================================================================
+// Codigo de plantilla para Toast (Notificacion)
+// =====================================================================
+// Ejemplo de cómo instanciar y personalizar una notificación (Toast):
+//
+// const miToast = new CustomToast({
+//     mensaje: "¡Acción realizada con éxito!", // Mensaje que mostrará
+//     tipo: "success", // Tipos disponibles: 'info', 'success', 'warning', 'error'
+//     duracion: 4000 // Tiempo en milisegundos que permanecerá visible antes de desaparecer
+// });
+//
+// ---------------------------------------------------------------------
+// Ejemplo de cómo aplicarlo a un botón (Trigger):
+// ---------------------------------------------------------------------
+// document.getElementById('mi-boton').addEventListener('click', () => {
+//     new CustomToast({
+//         mensaje: "¡Has hecho clic!",
+//         tipo: "info"
+//     });
+// });
+// =====================================================================
+
 class CustomToast {
     constructor(opciones = {}) {
         // Inicializa tus opciones por defecto
@@ -82,6 +105,37 @@ class CustomToast {
 /**
  * Crea una ventana modal emergente e interactiva en tu página.
  */
+
+// =====================================================================
+// Codigo de plantilla para modal
+// =====================================================================
+// Este es un ejemplo de cómo puedes instanciar y personalizar tu modal.
+// Puedes guardar este fragmento y modificar sus propiedades:
+//
+// const miModal = new CustomModal({
+//     titulo: "Tu Título Editable Aquí", // Cambia el título superior
+//     contenido: `
+//         <p>Aquí va el <strong>mensaje editable</strong> de tu modal.</p>
+//         <p>Puedes incluir cualquier estructura HTML.</p>
+//     `, // El cuerpo de tu modal, puede ser texto o HTML
+//     colorTema: "#023E7D", // Cambia el color de la línea decorativa superior
+//     claseExtra: "mi-clase-css", // Añade una clase CSS extra para estilos (ej. 'modal-glow', 'modal-neon')
+//     alCerrar: () => { 
+//         console.log("Acción ejecutada al cerrar"); 
+//     } // Función opcional que se ejecuta al cerrarse
+// });
+//
+// ---------------------------------------------------------------------
+// Ejemplo de cómo aplicarlo a un botón (Trigger):
+// ---------------------------------------------------------------------
+// document.getElementById('mi-boton').addEventListener('click', () => {
+//     new CustomModal({
+//         titulo: "¡Hola!",
+//         contenido: "<p>Este es tu modal.</p>"
+//     });
+// });
+// =====================================================================
+
 class CustomModal {
     constructor(opciones = {}) {
         // Inicializa tus variables de configuración
@@ -144,6 +198,23 @@ class CustomModal {
         document.addEventListener('keydown', this.teclaEscapeHandler);
     }
 
+    /**
+     * Permite actualizar el título y contenido del modal dinámicamente 
+     * después de haber sido creado.
+     */
+    actualizarMensaje(nuevoTitulo, nuevoContenido) {
+        if (nuevoTitulo) {
+            this.titulo = nuevoTitulo;
+            const cabecera = this.backdrop.querySelector('.modal-custom-cabecera h3');
+            if (cabecera) cabecera.innerHTML = nuevoTitulo;
+        }
+        if (nuevoContenido) {
+            this.contenido = nuevoContenido;
+            const cuerpo = this.backdrop.querySelector('.modal-custom-cuerpo');
+            if (cuerpo) cuerpo.innerHTML = nuevoContenido;
+        }
+    }
+
     cerrar() {
         // Activa la clase para tu animación de cierre
         this.backdrop.classList.add('modal-custom-cerrando');
@@ -170,6 +241,30 @@ class CustomModal {
 /**
  * Crea un menú desplegable interactivo (Dropdown) en tu página.
  */
+
+// =====================================================================
+// Codigo de plantilla para Menú Desplegable (Dropdown)
+// =====================================================================
+// Ejemplo de cómo instanciar y personalizar un menú desplegable:
+//
+// const miDropdown = new CustomDropdown({
+//     botonId: 'id-de-tu-boton', // El ID del elemento que abre el menú
+//     items: [
+//         { texto: 'Opción 1', accion: () => console.log('Opción 1 clickeada') },
+//         { texto: 'Opción 2', accion: () => console.log('Opción 2 clickeada') }
+//     ],
+//     claseExtra: 'dropdown-verde' // Tema o clase CSS adicional (ej. 'dropdown-verde', 'dropdown-neon')
+// });
+// 
+// ---------------------------------------------------------------------
+// Cómo aplicarlo en tu HTML:
+// ---------------------------------------------------------------------
+// <!-- Asegúrate de tener un botón con el ID correspondiente -->
+// <div class="dropdown-contenedor">
+//     <button id="id-de-tu-boton">Abrir Menú</button>
+// </div>
+// =====================================================================
+
 class CustomDropdown {
     constructor(opciones = {}) {
         // Inicializa tus opciones para el selector y elementos del menú
@@ -226,6 +321,28 @@ class CustomDropdown {
 /**
  * Crea y controla tooltips emergentes en tu página para dar información al usuario.
  */
+
+// =====================================================================
+// Codigo de plantilla para Etiqueta Flotante (Tooltip)
+// =====================================================================
+// Ejemplo de cómo inicializar tooltips en tu página.
+// Sólo necesitas instanciarlo una vez y agregará tooltips a todos los 
+// elementos que tengan el atributo `data-tooltip`.
+// Para cambiar el tema, agrega `data-tooltip-theme` en el elemento HTML.
+//
+// const misTooltips = new CustomTooltip({
+//     selector: '[data-tooltip]' // El atributo que buscará en el HTML para activar
+// });
+//
+// ---------------------------------------------------------------------
+// Ejemplo de cómo aplicarlo en el HTML (Trigger):
+// ---------------------------------------------------------------------
+// <!-- Solo agrega el atributo a cualquier elemento -->
+// <button data-tooltip="Mensaje flotante" data-tooltip-theme="tooltip-verde">
+//     Pasa el mouse aquí
+// </button>
+// =====================================================================
+
 class CustomTooltip {
     constructor(opciones = {}) {
         // Selecciona tus elementos por medio de un atributo data

@@ -1,21 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- CONTROL DE TUS MODALES ---
+    // En esta sección se aplican las plantillas de CustomModal a elementos específicos.
+    // Existen dos formas de hacerlo: asociando un modal a una clase (para afectar múltiples botones)
+    // o asociándolo a un ID (para un solo botón).
 
-    const triggerGlow = document.getElementById('glow-btn');
-    if (triggerGlow) {
-        triggerGlow.addEventListener('click', () => {
-            new CustomModal({
-                titulo: "Modal con Estilo Glow",
-                contenido: `
-                    <p>¡Hola! Has activado tu modal con estilo Glow.</p>
-                    <p>Esta ventana emergente hereda el marco de colores con brillo animado del botón que presionaste.</p>
-                `,
-                claseExtra: "modal-glow"
+    // Función reutilizable para asignar un modal a cualquier elemento por su clase
+    const configurarModalesPorClase = (nombreClase, opcionesModal) => {
+        const elementos = document.getElementsByClassName(nombreClase);
+        // getElementsByClassName devuelve una HTMLCollection, usamos Array.from para iterar con forEach
+        Array.from(elementos).forEach(elemento => {
+            elemento.addEventListener('click', () => {
+                new CustomModal(opcionesModal);
             });
         });
-    }
+    };
 
+    // APLICACIÓN 1: Múltiples elementos (por clase)
+    // Usamos la función para asignar el mismo modal a todos los botones con la clase 'glow-btn'.
+    // Esto es ideal cuando tienes varios botones que abren el mismo tipo de ventana.
+    configurarModalesPorClase('glow-btn', {
+        titulo: "Modal con Estilo Glow",
+        contenido: `
+            <p>¡Hola! Has activado tu modal con estilo Glow.</p>
+            <p>Esta ventana emergente hereda el marco de colores con brillo animado del botón que presionaste.</p>
+        `,
+        claseExtra: "modal-glow"
+    });
+
+    // APLICACIÓN 2: Elemento único (por ID) con estilo Neón
+    // Seleccionamos un botón específico ('neon-btn') y le añadimos un evento de clic.
+    // Al hacer clic, se instancia un CustomModal con la clase 'modal-neon'.
     const triggerNeon = document.getElementById('neon-btn');
     if (triggerNeon) {
         triggerNeon.addEventListener('click', () => {
@@ -30,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // APLICACIÓN 3: Modal Simple Clásico
+    // Al igual que el anterior, al dar clic en 'btn-modal-trigger' se abre un modal.
+    // Esta vez no le enviamos 'claseExtra', sino que solo le cambiamos el color de la línea
+    // superior usando la propiedad 'colorTema'.
     const triggerModalSimple = document.getElementById('btn-modal-trigger');
     if (triggerModalSimple) {
         triggerModalSimple.addEventListener('click', () => {
@@ -44,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Configura tu modal con formulario HTML
+    // APLICACIÓN 4: Modal con inyección de código HTML
+    // Demuestra cómo en la propiedad 'contenido' se puede insertar toda una estructura HTML compleja
+    // como un formulario funcional, e incluso conectar otras alertas (CustomToast) en el evento 'onsubmit' del mismo.
     const triggerModalHtml = document.getElementById('btn-modal-html');
     if (triggerModalHtml) {
         triggerModalHtml.addEventListener('click', () => {
@@ -69,8 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- CONTROL DE TUS MENÚS DESPLEGABLES (DROPDOWNS) ---
+    // Aquí los dropdowns se instancian enviándoles el ID del botón que los abrirá.
 
-    // Inicializa tu primer menú desplegable
+    // APLICACIÓN 1: Dropdown Básico
+    // Se ancla al botón 'btn-dropdown-1'. En el arreglo 'items', definimos el nombre
+    // de la opción ('texto') y la función que se ejecutará al darle clic ('accion').
     new CustomDropdown({
         botonId: 'btn-dropdown-1',
         items: [
@@ -79,7 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    // Inicializa tu segundo menú desplegable aplicando tu tema verde
+    // APLICACIÓN 2: Dropdown con Tema Verde
+    // Es igual al anterior, pero le agregamos la propiedad 'claseExtra: dropdown-verde'
+    // que cambiará sus estilos mediante el CSS.
     new CustomDropdown({
         botonId: 'btn-dropdown-2',
         claseExtra: 'dropdown-verde',
@@ -89,7 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    // Inicializa tu tercer menú desplegable aplicando tu tema de neón rosa
+    // APLICACIÓN 3: Dropdown con Tema Neón
+    // Aplica la clase 'dropdown-neon' y en sus acciones mezcla una alerta nativa del
+    // navegador (alert) con un CustomToast.
     new CustomDropdown({
         botonId: 'btn-dropdown-3',
         claseExtra: 'dropdown-neon',
@@ -100,13 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- CONTROL DE TUS ETIQUETAS FLOTANTES (TOOLTIPS) ---
-
-    // Inicializa tus tooltips de forma automática
+    
+    // APLICACIÓN GLOBAL:
+    // Al instanciar 'new CustomTooltip()' una vez, el código escanea todo tu HTML 
+    // buscando los atributos 'data-tooltip' y automáticamente les asigna los eventos 
+    // de hover para mostrar el tooltip. No tienes que instanciar uno por cada botón.
     new CustomTooltip();
 
     // --- CONTROL DE TUS NOTIFICACIONES TOAST ---
+    // Los Toasts están pensados para crearse dinámicamente cuando un evento ocurre 
+    // (ej: un clic, enviar un formulario, etc). Por eso instanciamos un 'new CustomToast()' 
+    // dentro de los listeners de clic (addEventListener) de cada botón de prueba.
 
-    // Envía un toast de tipo Éxito
+    // APLICACIÓN 1: Alerta de Éxito (Success)
+    // Lanza un Toast verde que dura 3.5 segundos.
     document.getElementById('btn-toast-success')?.addEventListener('click', () => {
         new CustomToast({
             mensaje: "¡Tu acción se realizó correctamente!",
@@ -115,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Envía un toast de tipo Información
+    // APLICACIÓN 2: Alerta Informativa (Info)
+    // Lanza un Toast azul que dura 4 segundos.
     document.getElementById('btn-toast-info')?.addEventListener('click', () => {
         new CustomToast({
             mensaje: "Tienes una nueva notificación en tu panel.",
@@ -124,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Envía un toast de tipo Advertencia
+    // APLICACIÓN 3: Alerta de Advertencia (Warning)
+    // Lanza un Toast amarillo que dura 4.5 segundos.
     document.getElementById('btn-toast-warning')?.addEventListener('click', () => {
         new CustomToast({
             mensaje: "Cuidado: Revisa la configuración de tus inputs.",
@@ -133,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Envía un toast de tipo Error
+    // APLICACIÓN 4: Alerta de Error (Error)
+    // Lanza un Toast rojo que dura 5 segundos.
     document.getElementById('btn-toast-error')?.addEventListener('click', () => {
         new CustomToast({
             mensaje: "Error: No se pudo conectar con tu servidor.",
