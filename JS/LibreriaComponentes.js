@@ -130,7 +130,7 @@ class CustomToast {
 // ---------------------------------------------------------------------
 // document.getElementById('mi-boton').addEventListener('click', () => {
 //     new CustomModal({
-//         titulo: "¡Hola!",
+//         titulo: "¡Hola!", 
 //         contenido: "<p>Este es tu modal.</p>"
 //     });
 // });
